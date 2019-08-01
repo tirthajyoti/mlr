@@ -1,5 +1,23 @@
 # mlr
-Multiple linear regression with statistical inference, residual analysis, and other features
+Multiple linear regression with statistical inference, residual analysis, and other features.
+
+Authored and maintained by **Dr. Tirthajyoti Sarkar ([Website](https://tirthajyoti.github.io), [LinkedIn profile](https://www.linkedin.com/in/tirthajyoti-sarkar-2127aa7/))**
+
+### Useful regression metrics,
+* MSE, SSE, SST 
+* R^2, Adjusted R^2
+
+### Inferential statistics,
+* p-values 
+* t-test values 
+* F-statistic
+* AIC, BIC, etc.
+
+### Visual residual analysis,
+* Plots of fitted vs. features, 
+* Plot of fitted vs. residuals, 
+* Histogram of standardized residuals
+* Q-Q plot of standardized residuals
 
 ## Install
 
