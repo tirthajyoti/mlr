@@ -182,7 +182,7 @@ model.covar()
 ```
 model.corrplot(cmap='inferno',annot=True)
 ```
-![corrplot](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/corrplot1.PNG?token=AGM62IECEMJKDMTF67TKBIS5IPILQ)
+![corrplot](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/corrplot1.PNG)
 
 ## Visual analysis of the residuals
 Residual analysis is crucial to check the assumptions of a linear regression model. `mlr` helps you check those assumption easily by providing straight-forward visual analytis methods for the residuals.
