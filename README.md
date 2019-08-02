@@ -7,6 +7,7 @@ Authored and maintained by **Dr. Tirthajyoti Sarkar ([Website](https://tirthajyo
 ### Useful regression metrics,
 * MSE, SSE, SST 
 * R^2, Adjusted R^2
+* AIC (Akaike Information Criterion), and BIC (Bayesian Information Criterion)
 
 ### Inferential statistics,
 * Standard errors
@@ -14,7 +15,6 @@ Authored and maintained by **Dr. Tirthajyoti Sarkar ([Website](https://tirthajyo
 * p-values 
 * t-test values 
 * F-statistic
-* AIC (Akaike Information Criterion), and BIC (Bayesian Information Criterion)
 
 ### Visual residual analysis,
 * Plots of fitted vs. features, 
@@ -112,7 +112,7 @@ model.print_metrics()
 
 ## Statistical inference
 
-### Do the F-test of overall significance
+### Perform the F-test of overall significance
 It retunrs the F-statistic and the p-value of the test. 
 
 If the p-value is a small number you can reject the Null hypothesis that all the regression coefficient is zero. That means a small p-value (generally < 0.01) indicates that the overall regression is statistically significant.
@@ -123,13 +123,14 @@ model.ftest()
 ```
 
 ### How about p-values, t-test statistics, and standard errors of the coefficients?
+Standard errors and corresponding t-tests give us the p-values for each regression coefficient, which tells us whether that particular coefficient is statistically significant or not (based on the given data).
+
 ```
 print("P-values:",model.pvalues())
 print("t-test values:",model.tvalues())
 print("Standard errors:",model.std_err())
 
->> P-values: [8.33674608e-01 3.27039586e-03 3.80572234e-05 2.59322037e-01
-              9.95094748e-11 2.82226752e-06]
+>> P-values: [8.33674608e-01 3.27039586e-03 3.80572234e-05 2.59322037e-01 9.95094748e-11 2.82226752e-06]
    t-test values: [ 0.21161008  3.1641696  -4.73263963  1.14716519  9.18010412 -5.60342256]
    Standard errors: [5.69360847 0.47462621 0.59980706 0.56580141 0.47081187 0.5381103 ]
 
@@ -147,3 +148,32 @@ model.conf_int()
        [ -4.10883113,  -1.92168771]])
 
 ```
+
+## Correlation matrix, heatmap, covariance
+
+We can build the correlation matrix right after ingesting the data. This matrix gives us an indication how much multicollinearity is present among the features/predictors.
+
+### Correlation matrix
+```
+model.ingest_data(X,y)
+model.corrcoef()
+
+>> array([[ 1.        ,  0.18424447, -0.00207883,  0.144186  ,  0.08678109],
+       [ 0.18424447,  1.        , -0.08098705, -0.05782733,  0.19119872],
+       [-0.00207883, -0.08098705,  1.        ,  0.03602977, -0.17560097],
+       [ 0.144186  , -0.05782733,  0.03602977,  1.        ,  0.05216212],
+       [ 0.08678109,  0.19119872, -0.17560097,  0.05216212,  1.        ]])
+```
+
+### Covariance
+
+```
+model.covar()
+
+>> array([[10.28752086,  1.51237819, -0.01770701,  1.47414685,  0.79121778],
+       [ 1.51237819,  6.54969628, -0.5504233 , -0.47174359,  1.39094876],
+       [-0.01770701, -0.5504233 ,  7.05247111,  0.30499622, -1.32560195],
+       [ 1.47414685, -0.47174359,  0.30499622, 10.16072256,  0.47264283],
+       [ 0.79121778,  1.39094876, -1.32560195,  0.47264283,  8.08036806]])
+```
+
