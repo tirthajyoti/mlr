@@ -1,3 +1,7 @@
 site_name: mlr
+nav:
+    - Home: index.md
+    - Starter examples: starter-examples.md
+    - Methods: methods.md
 site_author: Tirthajyoti Sarkar
 repo_url: https://github.com/tirthajyoti/mlr/
