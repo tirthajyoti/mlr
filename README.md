@@ -33,11 +33,28 @@ Authored and maintained by **Dr. Tirthajyoti Sarkar ([Website](https://tirthajyo
 * Correlation matrix
 * Correlation matrix heatmap
 
+## Requirements
+
+* numpy (`pip install numpy`)
+* pandas (`pip install pandas`)
+* matplotlib (`pip install matplotlib`)
+* seaborn (`pip install seaborn`)
+* scipy (`pip install scipy`)
+* statsmodels (`pip install statsmodels`)
+
 ## Install
 
+(On Linux and Windows) You can use ``pip`` to install ``doepy``::
+
+	pip install doepy
+
+(On Mac OS), first install pip,
 ```
-pip install mlr
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
 ```
+Then proceed as above.
+
 ---
 
 ## Quick Start
