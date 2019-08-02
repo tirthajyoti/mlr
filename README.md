@@ -97,6 +97,23 @@ model.fit()
 ```
 ---
 
+## Directly read from a Pandas DataFrame
+You can read directly from a Pandas DataFrame. Just give the features/predictors' column names as a list and the target column name as a string to the `fit_dataframe` method.
+
+At this point, only numerical features/targets are supported but in future releases we will support categorical variables too. 
+
+```
+<... obtain a Pandas DataFrame by some processing>
+df = pd.DataFrame(...)
+feature_cols = ['X1','X2','X3']
+target_col = 'output'
+
+model = mlr()
+model.fit_dataframe(X=feature_cols,y = target_col,dataframe=df)
+```
+
+---
+
 ## Metrics
 So far, it looks similar to the linear regression estimator of Scikit-Learn, doesn't it?
 <br>Here comes the difference,
