@@ -19,6 +19,7 @@ setup(
     install_requires=['numpy','pandas','matplotlib','seaborn','statsmodels'],
     keywords=[
         'Regression',
+        'Linear regression',
         'Data science',
         'Machine learning',
         'Engineering',
@@ -30,8 +31,12 @@ setup(
         ],
     classifiers=[
         'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
         'Intended Audience :: Education',
         'Intended Audience :: Science/Research',
+        'Intended Audience :: Information Technology',
+        'Intended Audience :: Financial and Insurance Industry',
+        'Intended Audience :: Healthcare Industry',
         'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
