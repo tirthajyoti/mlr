@@ -44,9 +44,9 @@ Authored and maintained by **Dr. Tirthajyoti Sarkar ([Website](https://tirthajyo
 
 ## Install
 
-(On Linux and Windows) You can use ``pip`` to install ``doepy``::
+(On Linux and Windows) You can use ``pip``
 
-	pip install doepy
+```pip install mlr```
 
 (On Mac OS), first install pip,
 ```
