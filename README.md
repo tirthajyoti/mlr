@@ -1,5 +1,7 @@
 # mlr (`pip install mlr`)
 
+![top](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/top_image_1.PNG)
+
 A lightweight, easy-to-use Python package that combines the `scikit-learn`-like simple API with the power of **statistical inference tests**, **visual residual analysis**, **outlier visualization**, **multicollinearity test**, found in packages like `statsmodels` and R language.
 
 Authored and maintained by **Dr. Tirthajyoti Sarkar ([Website](https://tirthajyoti.github.io), [LinkedIn profile](https://www.linkedin.com/in/tirthajyoti-sarkar-2127aa7/))**
@@ -127,6 +129,41 @@ model.print_metrics()
 ```
 ---
 
+## Correlation matrix, heatmap, covariance
+
+We can build the correlation matrix right after ingesting the data. This matrix gives us an indication how much multicollinearity is present among the features/predictors.
+
+### Correlation matrix
+```
+model.ingest_data(X,y)
+model.corrcoef()
+
+>> array([[ 1.        ,  0.18424447, -0.00207883,  0.144186  ,  0.08678109],
+       [ 0.18424447,  1.        , -0.08098705, -0.05782733,  0.19119872],
+       [-0.00207883, -0.08098705,  1.        ,  0.03602977, -0.17560097],
+       [ 0.144186  , -0.05782733,  0.03602977,  1.        ,  0.05216212],
+       [ 0.08678109,  0.19119872, -0.17560097,  0.05216212,  1.        ]])
+```
+
+### Covariance
+
+```
+model.covar()
+
+>> array([[10.28752086,  1.51237819, -0.01770701,  1.47414685,  0.79121778],
+       [ 1.51237819,  6.54969628, -0.5504233 , -0.47174359,  1.39094876],
+       [-0.01770701, -0.5504233 ,  7.05247111,  0.30499622, -1.32560195],
+       [ 1.47414685, -0.47174359,  0.30499622, 10.16072256,  0.47264283],
+       [ 0.79121778,  1.39094876, -1.32560195,  0.47264283,  8.08036806]])
+```
+
+### Correlation heatmap
+
+```
+model.corrplot(cmap='inferno',annot=True)
+```
+![corrplot](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/corrplot1.PNG)
+
 ## Statistical inference
 
 ### Perform the F-test of overall significance
@@ -166,41 +203,6 @@ model.conf_int()
 
 ```
 
-## Correlation matrix, heatmap, covariance
-
-We can build the correlation matrix right after ingesting the data. This matrix gives us an indication how much multicollinearity is present among the features/predictors.
-
-### Correlation matrix
-```
-model.ingest_data(X,y)
-model.corrcoef()
-
->> array([[ 1.        ,  0.18424447, -0.00207883,  0.144186  ,  0.08678109],
-       [ 0.18424447,  1.        , -0.08098705, -0.05782733,  0.19119872],
-       [-0.00207883, -0.08098705,  1.        ,  0.03602977, -0.17560097],
-       [ 0.144186  , -0.05782733,  0.03602977,  1.        ,  0.05216212],
-       [ 0.08678109,  0.19119872, -0.17560097,  0.05216212,  1.        ]])
-```
-
-### Covariance
-
-```
-model.covar()
-
->> array([[10.28752086,  1.51237819, -0.01770701,  1.47414685,  0.79121778],
-       [ 1.51237819,  6.54969628, -0.5504233 , -0.47174359,  1.39094876],
-       [-0.01770701, -0.5504233 ,  7.05247111,  0.30499622, -1.32560195],
-       [ 1.47414685, -0.47174359,  0.30499622, 10.16072256,  0.47264283],
-       [ 0.79121778,  1.39094876, -1.32560195,  0.47264283,  8.08036806]])
-```
-
-### Correlation heatmap
-
-```
-model.corrplot(cmap='inferno',annot=True)
-```
-![corrplot](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/corrplot1.PNG)
-
 ## Visual analysis of the residuals
 Residual analysis is crucial to check the assumptions of a linear regression model. `mlr` helps you check those assumption easily by providing straight-forward visual analytis methods for the residuals.
 
@@ -229,3 +231,12 @@ model.histogram_resid()
 model.qqplot_resid()
 ```
 ![](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/QQ_plot_resid.PNG)
+
+## Do more
+
+Do more fun stuff with your regression model.
+More features will be added in the future releases!
+
+* Outlier detection and plots
+* Multicollinearity checks
+
