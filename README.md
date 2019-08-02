@@ -177,3 +177,38 @@ model.covar()
        [ 0.79121778,  1.39094876, -1.32560195,  0.47264283,  8.08036806]])
 ```
 
+### Correlation heatmap
+
+```
+model.corrplot(cmap='inferno',annot=True)
+```
+![corrplot](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/corrplot1.PNG?token=AGM62IECEMJKDMTF67TKBIS5IPILQ)
+
+## Visual analysis of the residuals
+Residual analysis is crucial to check the assumptions of a linear regression model. `mlr` helps you check those assumption easily by providing straight-forward visual analytis methods for the residuals.
+
+### Fitted vs. residuals plot
+Check the assumption of constant variance and uncorrelated features (independence) with this plot
+```
+model.fitted_vs_residual()
+```
+![fit_vs_resid](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/fitted_vs_residuals.PNG?token=AGM62IEEROL3EHYOGRJOGDC5IPIXK)
+
+### Fitted vs features plot
+Check the assumption of linearity with this plot
+```
+model.fitted_vs_features()
+```
+![fit_vs_features](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/fitted_vs_features.PNG?token=AGM62IBM4XSVRHJGYLNU6V25IPJA6)
+
+### Histogram and Q-Q plot of standardized residuals
+Check the normality assumption of the error terms using these plots,
+```
+model.histogram_resid()
+```
+![hist_resid](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/hist_resid.PNG?token=AGM62IB5UXSDFBYD3UHONEK5IPJL2)
+<br>
+```
+model.qqplot_resid()
+```
+![](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/QQ_plot_resid.PNG?token=AGM62IHM6GCB2C3BIXDLLZ25IPJQK)
