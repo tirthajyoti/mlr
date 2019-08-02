@@ -64,7 +64,7 @@ Then proceed as above.
 Import the `MyLinearRegression` class,
 
 ```
-from MLR import MyLinearRegression as mlr
+from mlr.MLR import MyLinearRegression as mlr
 import numpy as np
 ```
 
