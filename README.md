@@ -192,23 +192,23 @@ Check the assumption of constant variance and uncorrelated features (independenc
 ```
 model.fitted_vs_residual()
 ```
-![fit_vs_resid](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/fitted_vs_residuals.PNG?token=AGM62IEEROL3EHYOGRJOGDC5IPIXK)
+![fit_vs_resid](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/fitted_vs_residuals.PNG)
 
 ### Fitted vs features plot
 Check the assumption of linearity with this plot
 ```
 model.fitted_vs_features()
 ```
-![fit_vs_features](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/fitted_vs_features.PNG?token=AGM62IBM4XSVRHJGYLNU6V25IPJA6)
+![fit_vs_features](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/fitted_vs_features.PNG)
 
 ### Histogram and Q-Q plot of standardized residuals
 Check the normality assumption of the error terms using these plots,
 ```
 model.histogram_resid()
 ```
-![hist_resid](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/hist_resid.PNG?token=AGM62IB5UXSDFBYD3UHONEK5IPJL2)
+![hist_resid](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/hist_resid.PNG)
 <br>
 ```
 model.qqplot_resid()
 ```
-![](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/QQ_plot_resid.PNG?token=AGM62IHM6GCB2C3BIXDLLZ25IPJQK)
+![](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/QQ_plot_resid.PNG)
