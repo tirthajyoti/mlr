@@ -1,4 +1,4 @@
-site_name: mlr
+site_name: mlr - a lightweight Python package for linear regression based statistical modeling
 nav:
     - Home: index.md
     - Starter examples: starter-examples.md
