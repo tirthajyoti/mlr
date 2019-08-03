@@ -4,9 +4,17 @@
 
 A lightweight, easy-to-use Python package that combines the `scikit-learn`-like simple API with the power of **statistical inference tests**, **visual residual analysis**, **outlier visualization**, **multicollinearity test**, found in packages like `statsmodels` and R language.
 
+## Author, license, Github repo
+
 Authored and maintained by **Dr. Tirthajyoti Sarkar ([Website](https://tirthajyoti.github.io), [LinkedIn profile](https://www.linkedin.com/in/tirthajyoti-sarkar-2127aa7/))**
 
+Here is the **[Github Repo for the source code](https://github.com/tirthajyoti/mlr)**. 
+
+It is licensed under [GNU Public License v3.0 (GPLv3)](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
 ![top](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/top_image_1.PNG)
+
+## Features
 
 ### Useful regression metrics,
 * MSE, SSE, SST 
