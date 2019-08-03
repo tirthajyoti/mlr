@@ -25,7 +25,9 @@ df=pd.DataFrame(np.hstack((X,y)),columns=cols)
 
 Now, if we check `df`, we will see something like this (the exact numbers will vary due to randomness),
 
-So, this problem has five explanatory variables - *'X0','X1','X2','X3'*, and *'X4'*.
+![df1](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/dataframe-1.PNG)
+
+So, this problem has five explanatory variables - *'X0', 'X1', 'X2', 'X3'*, and *'X4'*.
 
 Now, we want to use `mlr` to check how the regression metrics change as we start with only one explanatory variable and gradually add more.
 
@@ -41,6 +43,10 @@ for i in range(1,6):
     print("-"*80)
     m.print_metrics() # Printing the metrics
 ```
+
+We should see something like following,
+
+![ae1](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/advanced_example_1.PNG)
 
 Or, let's say we want to plot the AIC and BIC values as the number of explanatory variables grow.
 Working with the same DataFrame `df`, following code plots the desired result,
@@ -70,3 +76,5 @@ plt.xticks([1,2,3,4,5],fontsize=14)
 plt.yticks(fontsize=14)
 plt.show()
 ```
+
+![ae2](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/aic_bic_with_variables.PNG)
