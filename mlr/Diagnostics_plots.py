@@ -87,7 +87,10 @@ class Diagnostics_plots:
         plt.show()
 
     def shapiro_test(self, normalized=True):
-        """Performs Shapiro-Wilk normality test on the residuals"""
+        """
+        Performs Shapiro-Wilk normality test on the residuals
+        Returns the p-value of the test for the Null hypothesis that the data is not generated from a Normal distribution
+        """
         if not self.is_fitted:
             print("Model not fitted yet!")
             return None
@@ -97,14 +100,21 @@ class Diagnostics_plots:
             norm_r = self.resid_ / np.linalg.norm(self.resid_)
         else:
             norm_r = self.resid_
+            
         _, p = shapiro(norm_r)
-        if p > 0.01:
-            print("The residuals seem to have come from a Gaussian process")
-        else:
-            print(
-                "The residuals does not seem to have come from a Gaussian process.\nNormality assumptions of the linear regression may have been violated."
-            )
-
+        
+        return float(p)
+    
+    def durbin_watson(self):
+        """Performs Durbin-Watson test for checking autocorrelation of residuals"""
+        if not self.is_fitted:
+            print("Model not fitted yet!")
+            return None
+        from statsmodels.stats.stattools import durbin_watson
+        test_score = float(durbin_watson(self.resid_))
+        
+        return round(test_score,3)
+    
     def qqplot_resid(self, normalized=True):
         """Creates a quantile-quantile plot for residuals comparing with a normal distribution"""
         if not self.is_fitted:

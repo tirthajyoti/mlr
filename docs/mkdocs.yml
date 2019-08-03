@@ -2,6 +2,7 @@ site_name: mlr - a lightweight Python package for linear regression based statis
 nav:
     - Home: index.md
     - Starter examples: examples.md
+    - Advanced examples: examples_advanced.md
     - Methods: methods.md
 site_author: Tirthajyoti Sarkar
 repo_url: https://github.com/tirthajyoti/mlr/
