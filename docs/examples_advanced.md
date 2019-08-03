@@ -1,5 +1,6 @@
-## How regression metrics change as we add more explanatory variables
+## How regression metrics change with explanatory variables
 
+### Printing metrics as we add variables one by one
 Let's say we define some random data using `numpy` as follows,
 
 ```
@@ -48,7 +49,9 @@ We should see something like following,
 
 ![ae1](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/advanced_example_1.PNG)
 
-Or, let's say we want to plot the AIC and BIC values as the number of explanatory variables grow.
+### Plotting AIC/BIC as we add variables one by one
+
+Let's say we want to plot the AIC and BIC values as the number of explanatory variables grow.
 Working with the same DataFrame `df`, following code plots the desired result,
 
 ```
@@ -78,3 +81,36 @@ plt.show()
 ```
 
 ![ae2](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/aic_bic_with_variables.PNG)
+
+## Variables selection
+
+Often for small number of explanatory variables, we can scan through every possible combination of variables in the model and check their metrics - adjusted R^2 or AIC to see which model makes most sense from bias-variance trade-off point of view.
+
+Following code accomplishes that by printing out a table of adjusted R^2 and AIC values for all combination of variable selection,
+
+```
+# Build a combinatorial list
+from itertools import combinations
+f=list(df.columns[:-2])
+feature_list=[]
+for i in range(1,6):
+    feature_list+=list(combinations(f,i))
+
+# Usual code of iterating over the list, model fitting, and storing the metrics
+aic_lst=[]
+adjusted_r2_lst=[]
+
+for f in feature_list:
+    m = mlr()
+    X = list(f)
+    m.fit_dataframe(X=X,y='y',dataframe=df)
+    aic_lst.append(m.aic())
+    adjusted_r2_lst.append(m.adj_r_squared())
+    
+metrics=(pd.DataFrame(data=[feature_list,aic_lst,adjusted_r2_lst])).T
+metrics.columns=['Features included','AIC','Adjusted R^2']
+```
+
+The final table `metrics` should look something like,
+
+![ae3](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/advanced_examples_3.PNG)
