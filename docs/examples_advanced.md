@@ -113,4 +113,4 @@ metrics.columns=['Features included','AIC','Adjusted R^2']
 
 The final table `metrics` should look something like,
 
-![ae3](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/advanced_examples_3.PNG)
+![ae3](https://raw.githubusercontent.com/tirthajyoti/mlr/master/images/advanced_example_3.PNG)
