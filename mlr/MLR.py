@@ -1,9 +1,18 @@
+"""
 from mlr.Metrics import Metrics
 from mlr.Inference import Inference
 from mlr.Diagnostics_plots import Diagnostics_plots
 from mlr.Data_plots import Data_plots
 from mlr.Outliers import Outliers
 from mlr.Multicollinearity import Multicollinearity
+"""
+
+from Metrics import Metrics
+from Inference import Inference
+from Diagnostics_plots import Diagnostics_plots
+from Data_plots import Data_plots
+from Outliers import Outliers
+from Multicollinearity import Multicollinearity
 
 import numpy as np
 from pandas.api.types import is_numeric_dtype

@@ -104,7 +104,8 @@ class Diagnostics_plots:
         _, p = shapiro(norm_r)
         
         return float(p)
-    
+            
+
     def durbin_watson(self):
         """Performs Durbin-Watson test for checking autocorrelation of residuals"""
         if not self.is_fitted:

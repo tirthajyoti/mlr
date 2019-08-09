@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
 from seaborn import heatmap
-from mlr.Multicollinearity import Multicollinearity 
+#from mlr.Multicollinearity import Multicollinearity
+from Multicollinearity import Multicollinearity
 
 class Data_plots:
     """
