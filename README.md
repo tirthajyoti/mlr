@@ -57,6 +57,8 @@ python get-pip.py
 ```
 Then proceed as above.
 
+For the latest additions, you can always clone this Github repo and run the setup.py.
+
 ---
 
 ## Quick Start
